@@ -161,20 +161,42 @@
         <div id="message">ДОБРО ПОЖАЛОВАТЬ!</div>
     </div>
 
+    <button id="start-btn" style="
+        position: fixed;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 18px 60px;
+        font-size: 24px;
+        font-weight: bold;
+        background: linear-gradient(135deg, #FFD700, #FF69B4);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.5s;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    ">
+        Начать! 🚀
+    </button>
+
     <script>
         // Инициализация Telegram Web App
         let tg = window.Telegram.WebApp;
-        tg.expand(); // Раскрыть на весь экран
-        tg.enableClosingConfirmation(); // Подтверждение закрытия
-        
-        // После анимации (4 секунды) закрыть Web App и вернуться к боту
-        setTimeout(() => {
-            tg.close();
-        }, 4000);
-        
-        // Отправить событие боту что анимация просмотрена
+        tg.expand();
         tg.ready();
-        tg.sendData('animation_viewed');
+        
+        // Показать кнопку через 3 секунды (после анимации)
+        setTimeout(() => {
+            document.getElementById('start-btn').style.opacity = '1';
+        }, 3000);
+        
+        // Кнопка "Начать" открывает бота
+        document.getElementById('start-btn').onclick = () => {
+            tg.close();
+            window.open('https://t.me/barter_chain_bot?start=welcome', '_blank');
+        };
     </script>
 </body>
 </html>

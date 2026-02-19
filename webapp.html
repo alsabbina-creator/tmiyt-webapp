@@ -192,9 +192,9 @@
             document.getElementById('start-btn').style.opacity = '1';
         }, 3000);
         
-        // Кнопка "Начать" открывает бота
+        // Кнопка "Начать" закрывает Web App
         document.getElementById('start-btn').onclick = () => {
-            tg.openTelegramLink('https://t.me/barter_chain_bot?start=welcome');
+            tg.close();
         };
     </script>
 </body>

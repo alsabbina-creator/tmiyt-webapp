@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ТЫ МНЕ = Я ТЕБЕ</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: #2a1b4e;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        #animation-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        #message {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #FFD700;
+            font-size: 28px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1s ease-in 2.5s forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        svg {
+            width: 90vw;
+            max-width: 512px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="animation-container">
+        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <!-- ЖЁЛТЫЙ ЧЕЛОВЕЧЕК -->
+            <g id="yellow">
+                <circle cx="150" cy="160" r="30" fill="#FFD700" stroke="#FFA500" stroke-width="3">
+                    <animate attributeName="cx" values="60;150" dur="1.5s" fill="freeze"/>
+                </circle>
+                <path d="M 140 165 Q 150 170 160 165" stroke="#FFA500" stroke-width="2" fill="none">
+                    <animate attributeName="d" values="M 50 165 Q 60 170 70 165;M 140 165 Q 150 170 160 165" dur="1.5s" fill="freeze"/>
+                </path>
+                <circle cx="143" cy="155" r="3" fill="#000">
+                    <animate attributeName="cx" values="53;143" dur="1.5s" fill="freeze"/>
+                </circle>
+                <circle cx="157" cy="155" r="3" fill="#000">
+                    <animate attributeName="cx" values="67;157" dur="1.5s" fill="freeze"/>
+                </circle>
+                <line x1="150" y1="190" x2="150" y2="280" stroke="#FFD700" stroke-width="8" stroke-linecap="round">
+                    <animate attributeName="x1" values="60;150" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="60;150" dur="1.5s" fill="freeze"/>
+                </line>
+                <line x1="150" y1="210" x2="110" y2="240" stroke="#FFD700" stroke-width="7" stroke-linecap="round">
+                    <animate attributeName="x1" values="60;150" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="20;110" dur="1.5s" fill="freeze"/>
+                </line>
+                <line x1="150" y1="210" x2="240" y2="240" stroke="#FFD700" stroke-width="7" stroke-linecap="round">
+                    <animate attributeName="x1" values="60;150" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="100;240" dur="1.5s" fill="freeze"/>
+                </line>
+                <line x1="150" y1="280" x2="130" y2="340" stroke="#FFD700" stroke-width="7" stroke-linecap="round">
+                    <animate attributeName="x1" values="60;150" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="40;130" dur="1.5s" fill="freeze"/>
+                </line>
+                <line x1="150" y1="280" x2="170" y2="340" stroke="#FFD700" stroke-width="7" stroke-linecap="round">
+                    <animate attributeName="x1" values="60;150" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="80;170" dur="1.5s" fill="freeze"/>
+                </line>
+            </g>
+            
+            <!-- РОЗОВЫЙ ЧЕЛОВЕЧЕК -->
+            <g id="pink">
+                <circle cx="362" cy="160" r="30" fill="#FF69B4" stroke="#FF1493" stroke-width="3">
+                    <animate attributeName="cx" values="452;362" dur="1.5s" fill="freeze"/>
+                </circle>
+                <path d="M 352 165 Q 362 170 372 165" stroke="#FF1493" stroke-width="2" fill="none">
+                    <animate attributeName="d" values="M 442 165 Q 452 170 462 165;M 352 165 Q 362 170 372 165" dur="1.5s" fill="freeze"/>
+                </path>
+                <circle cx="355" cy="155" r="3" fill="#000">
+                    <animate attributeName="cx" values="445;355" dur="1.5s" fill="freeze"/>
+                </circle>
+                <circle cx="369" cy="155" r="3" fill="#000">
+                    <animate attributeName="cx" values="459;369" dur="1.5s" fill="freeze"/>
+                </circle>
+                <line x1="362" y1="190" x2="362" y2="280" stroke="#FF69B4" stroke-width="8" stroke-linecap="round">
+                    <animate attributeName="x1" values="452;362" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="452;362" dur="1.5s" fill="freeze"/>
+                </line>
+                <line x1="362" y1="210" x2="402" y2="240" stroke="#FF69B4" stroke-width="7" stroke-linecap="round">
+                    <animate attributeName="x1" values="452;362" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="492;402" dur="1.5s" fill="freeze"/>
+                </line>
+                <line x1="362" y1="210" x2="272" y2="240" stroke="#FF69B4" stroke-width="7" stroke-linecap="round">
+                    <animate attributeName="x1" values="452;362" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="412;272" dur="1.5s" fill="freeze"/>
+                </line>
+                <line x1="362" y1="280" x2="342" y2="340" stroke="#FF69B4" stroke-width="7" stroke-linecap="round">
+                    <animate attributeName="x1" values="452;362" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="432;342" dur="1.5s" fill="freeze"/>
+                </line>
+                <line x1="362" y1="280" x2="382" y2="340" stroke="#FF69B4" stroke-width="7" stroke-linecap="round">
+                    <animate attributeName="x1" values="452;362" dur="1.5s" fill="freeze"/>
+                    <animate attributeName="x2" values="472;382" dur="1.5s" fill="freeze"/>
+                </line>
+            </g>
+            
+            <!-- Рукопожатие -->
+            <g opacity="0">
+                <animate attributeName="opacity" values="0;0;1" dur="1.5s" fill="freeze"/>
+                <rect x="246" y="235" width="10" height="10" fill="#FFD700"/>
+                <rect x="256" y="235" width="10" height="10" fill="#FF69B4"/>
+                <rect x="266" y="235" width="10" height="10" fill="#FFD700"/>
+                <rect x="241" y="245" width="10" height="10" fill="#FF69B4"/>
+                <rect x="251" y="245" width="10" height="10" fill="#FFD700"/>
+                <rect x="261" y="245" width="10" height="10" fill="#FF69B4"/>
+                <rect x="271" y="245" width="10" height="10" fill="#FFD700"/>
+            </g>
+            
+            <!-- Искры -->
+            <g opacity="0">
+                <animate attributeName="opacity" values="0;0;0;1" dur="2s" fill="freeze"/>
+                <circle cx="220" cy="220" r="10" fill="#FFD700">
+                    <animate attributeName="r" values="5;12;5" dur="1s" begin="1.5s" repeatCount="2"/>
+                </circle>
+                <circle cx="292" cy="220" r="10" fill="#FF69B4">
+                    <animate attributeName="r" values="5;12;5" dur="1s" begin="1.7s" repeatCount="2"/>
+                </circle>
+                <circle cx="256" cy="210" r="8" fill="#FFF">
+                    <animate attributeName="r" values="4;10;4" dur="0.8s" begin="1.6s" repeatCount="2"/>
+                </circle>
+            </g>
+        </svg>
+        
+        <div id="message">ДОБРО ПОЖАЛОВАТЬ!</div>
+    </div>
+
+    <script>
+        // Инициализация Telegram Web App
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Раскрыть на весь экран
+        tg.enableClosingConfirmation(); // Подтверждение закрытия
+        
+        // После анимации (4 секунды) закрыть Web App и вернуться к боту
+        setTimeout(() => {
+            tg.close();
+        }, 4000);
+        
+        // Отправить событие боту что анимация просмотрена
+        tg.ready();
+        tg.sendData('animation_viewed');
+    </script>
+</body>
+</html>

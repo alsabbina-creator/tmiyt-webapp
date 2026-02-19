@@ -194,8 +194,7 @@
         
         // Кнопка "Начать" открывает бота
         document.getElementById('start-btn').onclick = () => {
-            tg.close();
-            window.open('https://t.me/barter_chain_bot?start=welcome', '_blank');
+            tg.openTelegramLink('https://t.me/barter_chain_bot?start=welcome');
         };
     </script>
 </body>
